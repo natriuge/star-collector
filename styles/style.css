@@ -12,10 +12,3 @@ body {
 #canvas-container {
   padding: 50px 0px;
 }
-
-#canvas {
-  background-color: black;
-  width: 1000px;
-  height: 700px;
-  
-}

@@ -1,18 +1,37 @@
-const img = new Image();
-img.src = 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/146636240/original/e14b75037ee60d82542dd75e84104f2d05eb82a4/make-backgrounds-for-games.png';
-
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-const backgroundImage = {
-  img: img
-}
+// Imagem de fundo do jogo
+const bgImgCanvas = new Image ();
+bgImgCanvas.src = '/images/background.png';
+
+// Imagem do personagem
+const characterImg = new Image();
+characterImg.src = '/images/mage.png';
+
+// Imagem da estrela
+const starImg = new Image();
+starImg.src = '/images/star.png';
+
+// Imagem da super estrela
+const superStarImg = new Image();
+superStarImg.src = '/images/super star.png';
+
+// Imagem do meteoro
+const meteorImg = new Image();
+meteorImg.src = '/images/meteor.png';
 
 
 
 
 
-window.onload = () => {
-  var canvas = document.getElementById('canvas');
+window.addEventListener("load", () => {
+    
+  // Evento Listener que atualiza a página:
+  // Recebe: Imagem de fundo, posição x, posição y, largura e altura. // 
+  ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700) 
 
-};
+})
+
+
+  
