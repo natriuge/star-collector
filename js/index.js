@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -23,41 +24,10 @@ meteorImg.src = '/images/meteor.png';
 
 // Array com os elementos, tamanhos ainda pendentes
 const elements = [
-  {img:starImg, width:300, heigth: 300},
-  {img:superStarImg, width:100, heigth: 100}, 
-  {img:meteorImg, width:150, heigth: 150},
+  {img:starImg, width:65, heigth: 120},
+  {img:superStarImg, width:65, heigth: 120}, 
+  {img:meteorImg, width:60, heigth: 120},
 ]
-
-
-// Classe do personagem
-class characterPlayer {
-  // Recebe respectivamente:
-  constructor(x, y, width, height, img) {
-    this.x = x; // Coordenada x
-    this.y = y; // Coordenada y
-    this.width = width; // Largura do personagem
-    this.height = height; // Altura do personagem
-    this.img = img; // Imagem do personagem
-    this.speedX = 0; // Velocidade no eixo x
-    this.speedY = 0; // Velocidade no eixo y
-    this.starsCounter = 0; // Inicia com 0 estrelas
-  }
-}
-
-
-// Classe do jogo
-class Game {
-  // Recebe respectivamente:
-  constructor(background, player) {
-    this.background = background; // Imagem de fundo
-    this.player = player; // Imagem do personagem
-    this.elements = []; // Array de elementos
-    this.frames = 0; 
-    this.score = 0; // Contagem de estrelas
-    this.animationId; 
-  }
-}
-
 
 
 
@@ -73,6 +43,10 @@ window.addEventListener("load", () => {
   // 04. Largura
   // 05. Altura
   ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700) 
+  ctx.drawImage(characterImg, 100, 550, 100, 130)
+  ctx.drawImage(starImg, 200, 0, 65, 120)
+  ctx.drawImage(superStarImg, 300, 0, 65, 120)
+  ctx.drawImage(meteorImg, 400, 0, 60, 120)
 
 })
 
