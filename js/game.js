@@ -37,6 +37,38 @@ class Player {
       this.speedY = 0; // Velocidade no eixo y
       this.starsCounter = 0; // Inicia com 0 estrelas
     }
+
+
+    updatePosition() {
+        this.x += this.speedX;
+      
+        if (this.x <= this.width - 10) { // descontando valores pro mage manter-se na tela
+          this.x = this.width - 10;
+        }
+      
+        if (this.x >= canvas.width - (this.width + 40)) { // descontando valores pro mage manter-se na tela
+          this.x = canvas.width - (this.width + 40);
+        }
+      
+        this.y += this.speedY;
+      }
+      
+      draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+      }
+
+      left() {
+        return this.x;
+      }
+      right() {
+        return this.x + this.width;
+      }
+      top() {
+        return this.y;
+      }
+      bottom() {
+        return this.y + this.height;
+      }
   }
   
 

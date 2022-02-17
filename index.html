@@ -7,12 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Collector</title>
     <link href="./styles/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
+
 </head>
-<body>
+<body id="container">
+  <div id="start-screen">
+
+    <img src='./images/logo.png' id="game-logo">
+    <p id="slogan">
+      Quantas super estrelas você<br>
+      é capaz de coletar?
+    </p>
+    <button id="start-button">START</button>
+
+  </div>
 
   <div id="canvas-container"> 
+
     <canvas id="canvas" width="1000" height="700"></canvas>
+  
   </div>
   <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>

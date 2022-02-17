@@ -22,12 +22,15 @@ superStarImg.src = '/images/super star.png';
 const meteorImg = new Image();
 meteorImg.src = '/images/meteor.png';
 
-// Array com os elementos, tamanhos ainda pendentes
+// Array com os elementos, tamanhos atualizados
 const elements = [
   {img:starImg, width:65, heigth: 120},
   {img:superStarImg, width:65, heigth: 120}, 
   {img:meteorImg, width:60, heigth: 120},
 ]
+
+
+
 
 
 
@@ -43,10 +46,13 @@ window.addEventListener("load", () => {
   // 04. Largura
   // 05. Altura
   ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700) 
-  ctx.drawImage(characterImg, 100, 550, 100, 130)
-  ctx.drawImage(starImg, 200, 0, 65, 120)
-  ctx.drawImage(superStarImg, 300, 0, 65, 120)
-  ctx.drawImage(meteorImg, 400, 0, 60, 120)
+  // ctx.drawImage(characterImg, 100, 550, 100, 130)
+  // ctx.drawImage(starImg, 200, 0, 65, 120)
+  // ctx.drawImage(superStarImg, 300, 0, 65, 120)
+  // ctx.drawImage(meteorImg, 400, 0, 60, 120)
+
+  document.getElementById
+
 
 })
 
