@@ -7,25 +7,8 @@
 // Meteoros subtraem 2 pontos no score
 // Ao final do timer o número de total do score é exibido
 
-// Classe do jogo
-class Game {
-    // Recebe respectivamente:
-    constructor(background, player) {
-      this.background = background; // Imagem de fundo
-      this.player = player; // Imagem do personagem
-      this.elements = []; // Array de elementos
-      this.frames = 0; 
-      this.score = 0; // Contagem de estrelas
-      this.animationId; 
-    }
-    draw() {
-        ctx.drawImage(this.player)
-      }
-  }
-  
-
 // Classe do personagem
-class Player {
+class GameObject {
     // Recebe respectivamente:
     constructor(x, y, width, height, img) {
       this.x = x; // Coordenada x
@@ -38,38 +21,92 @@ class Player {
       this.starsCounter = 0; // Inicia com 0 estrelas
     }
 
-
     updatePosition() {
         this.x += this.speedX;
-      
-        if (this.x <= this.width - 10) { // descontando valores pro mage manter-se na tela
-          this.x = this.width - 10;
-        }
-      
-        if (this.x >= canvas.width - (this.width + 40)) { // descontando valores pro mage manter-se na tela
-          this.x = canvas.width - (this.width + 40);
-        }
-      
         this.y += this.speedY;
-      }
-      
-      draw() {
+    }
+
+    draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
       }
+    }
 
-      left() {
-        return this.x;
-      }
-      right() {
-        return this.x + this.width;
-      }
-      top() {
-        return this.y;
-      }
-      bottom() {
-        return this.y + this.height;
-      }
-  }
-  
+    class BackgroundImage extends GameObject {
+        constructor(x, y, width, height, img) {
+          super(x, y, width, height, img);
+          this.speedY = 2; 
+        }
+    }
+    
 
-  
+
+
+// Classe do jogo
+class Game {
+    // Recebe respectivamente:
+    constructor(background, player) {
+      this.background = background;
+      this.player = player; 
+      this.elements = [];
+      this.frames = 0; 
+      this.score = 0;
+      this.animationId; 
+    }
+
+    start = () => {
+        this.updateGame();
+
+    }
+
+    updateGame = () => {
+        this.clear();
+
+        this.animationId = requestAnimationFrame(this.updateGame);
+
+    }
+
+    clear = () => {
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+
+    }
+}
+
+
+    //definir loop
+    //refreshanimationframe
+
+    //dentro do loop:
+    //movimento do player
+
+
+
+
+
+
+
+function startGame(player) { 
+
+    
+    const bgImgCanvas = new Image ();
+    bgImgCanvas.src = './images/background.png';
+
+    const characterImg = new Image();
+    characterImg.src = './images/mage.png';
+    
+    const backgroundImage = new BackgroundImage (0, 0, canvas.width, canvas.height, bgImgCanvas);
+      
+    const game = new Game(backgroundImage, player); 
+
+    game.background.draw();
+    game.player.draw();
+
+        
+}
+    
+
+    
+    
+
+    
+    
+   
