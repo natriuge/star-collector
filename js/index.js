@@ -55,21 +55,21 @@ function startGame() {
   document.addEventListener("keydown", (event) => {
       if (event.code === "ArrowLeft") {
         game.player.speedX = -3;
+      } else if (event.code === "ArrowUp") {
+        game.player.speedY = -4;
       } else if (event.code === "ArrowRight") {
         game.player.speedX = 3;
+      } else if (event.code === "ArrowDown") {
+        game.player.speedY= 4;
       }
     });
 
     document.addEventListener("keyup", () => {
-        game.player.speedX = 0;
+      game.player.speedX = 0;
+      game.player.speedY = 0;
     })
-    
-      
+         
 }
-
-
-
-
 
 
 
