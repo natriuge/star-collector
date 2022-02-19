@@ -36,6 +36,8 @@ const elements = [
 //   ctx.drawImage(meteorImg, 400, 0, 60, 120)
 // }
 
+//Como mudar a sprite do personagem quando o botão da direita é acionado?
+
 
 function startGame() { 
  
@@ -46,8 +48,9 @@ function startGame() {
   characterImg.src = './images/mage.png';
   
   const backgroundImage = new BackgroundImage (0, 0, canvas.width, canvas.height, bgImgCanvas);
-  const characterImage = new GameObject(500, canvas.height - 130, 100, 130, characterImg);
-     
+  const maxYMage = canvas.height - 130;
+  const characterImage = new GameObject(500, canvas.height - 130, 100, 130, characterImg, maxYMage, 0);
+
   const game = new Game(backgroundImage, characterImage); 
 
   game.start();
