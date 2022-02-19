@@ -54,11 +54,11 @@ function startGame() {
 
   document.addEventListener("keydown", (event) => {
       if (event.code === "ArrowLeft") {
-        game.player.speedX = -3;
+        game.player.speedX = -4;
       } else if (event.code === "ArrowUp") {
         game.player.speedY = -4;
       } else if (event.code === "ArrowRight") {
-        game.player.speedX = 3;
+        game.player.speedX = 4;
       } else if (event.code === "ArrowDown") {
         game.player.speedY= 4;
       }

@@ -13,14 +13,31 @@ class GameObject {
     updatePosition() {
       this.x += this.speedX;
       this.y += this.speedY;
+
+      if (this.x <= 0) {
+        this.x = 0;
+      }
+      
+      if (this.x >= canvas.width - 100) {
+        this.x = canvas.width - 100;
+      }
+      
+      if (this.y <= 0) {
+        this.y = 0;
+      }
+      
+      if (this.y >= canvas.height - 130) {
+        this.y = canvas.height - 130;
+      }
     }
+
 
     draw() {
       ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
+  }
+  
 
-
-}
 
 class BackgroundImage extends GameObject {
   constructor(x, y, width, height, img) {
