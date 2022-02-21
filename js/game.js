@@ -9,37 +9,75 @@ class GameObject {
     this.speedX = 0; 
     this.speedY = 0;
     this.elementPoints = elementPoints; 
+    this.total = 0;
     };
 
-    updatePosition() {
-      this.x += this.speedX;
-      this.y += this.speedY;
 
-      if (this.x <= 0) {
+  updatePosition() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x <= 0) {
         this.x = 0;
-      };
-      //largura do canvas - largura do personagem
-      if (this.x >= canvas.width - this.width) {
-        this.x = canvas.width - this.width;
-      };
+    };
+    //largura do canvas - largura do personagem
+    if (this.x >= canvas.width - this.width) {
+      this.x = canvas.width - this.width;
+    };
       
-      if (this.y <= 0) {
-        this.y = 0;
-      };
-
-      // largura do canvas - altura do personagem
-      if (this.y >= this.maxY) {
-        this.y = this.maxY ;
-      };
-      
-  
+    if (this.y <= 0) {
+      this.y = 0;
     };
 
-
-    draw() {
-      ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    // largura do canvas - altura do personagem
+    if (this.y >= this.maxY) {
+       this.y = this.maxY ;
     };
   };
+
+
+  draw() {
+    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+
+  };
+
+  left() {
+    return this.x;
+  }
+  right() {
+    return this.x + this.width;
+  }
+  top() {
+    return this.y;
+  }
+  bottom() {
+    return this.y + this.height;
+  }
+
+  
+  crashWith = (element) => {
+    if (!( this.bottom() < element.top() ||
+      this.top() > element.bottom() ||
+      this.right() < element.left() ||
+      this.left() > element.right() ))
+
+      console.log('elements:', this.element.elementPoints)
+    {
+      
+     
+      let total = this.total
+      // console.log(total)
+      // console.log(this.total)
+      total = this.elementPoints + total
+      console.log('elements points:', this.elementPoints)
+      console.log('total', this.total)
+    
+    return true
+    }
+    return false
+  }
+}
+
   
 
 
@@ -64,22 +102,6 @@ class BackgroundImage extends GameObject {
   };
 };
 
-// class element extends GameObject {
-//   constructor(x, y, width, height) {
-//     super (x, y, width, height);
-//     this.speedY = 3;
-//   }
-
-//   updatePosition() {
-//     this.y += this.speedY;
-//     this.y %= canvas.height;
-//   };
-
-//   draw() {
-//     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-//   }
-// }
-    
     
 class Game {
   constructor(background, player) {
@@ -106,7 +128,16 @@ class Game {
 
     this.updateElements();
 
+    this.elements.forEach((element) => {
+      this.player.crashWith(element)
+
+    })
+
+
+    this.updateTotal();
+
     this.animationId = requestAnimationFrame(this.updateGame);
+
 
   };
 
@@ -135,13 +166,24 @@ class Game {
     this.elements.push(element);
 
     }
+   
   }
+
+    updateTotal() {
+      ctx.font = "25px Verdana";
+      ctx.fillStyle = "black";
+      ctx.fillText(`Score: ${this.total}`, 60, 75); 
+    }
+  
 
   clear = () => {
     ctx.clearRect(0,0, canvas.width, canvas.height);
 
   };
-};
+}
+
+
+
 
 
 
