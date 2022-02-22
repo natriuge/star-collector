@@ -9,7 +9,6 @@ class GameObject {
     this.speedX = 0; 
     this.speedY = 0;
     this.elementPoints = elementPoints; 
-    this.total = 0;
     };
 
 
@@ -53,29 +52,6 @@ class GameObject {
   bottom() {
     return this.y + this.height;
   }
-
-  
-  crashWith = (element) => {
-    if (!( this.bottom() < element.top() ||
-      this.top() > element.bottom() ||
-      this.right() < element.left() ||
-      this.left() > element.right() ))
-
-      console.log('elements:', this.element.elementPoints)
-    {
-      
-     
-      let total = this.total
-      // console.log(total)
-      // console.log(this.total)
-      total = this.elementPoints + total
-      console.log('elements points:', this.elementPoints)
-      console.log('total', this.total)
-    
-    return true
-    }
-    return false
-  }
 }
 
   
@@ -102,11 +78,15 @@ class BackgroundImage extends GameObject {
   };
 };
 
+const characterImg = new Image();
+  characterImg.src = './images/mage.png';
+
+const newPlayer = new GameObject (500, canvas.height - 130, 100, 130, characterImg, 570, 0);
     
 class Game {
   constructor(background, player) {
     this.background = background;
-    this.player = player; 
+    this.player = newPlayer; 
     this.elements = [];
     this.frames = 0; 
     this.score = 0;
@@ -129,7 +109,7 @@ class Game {
     this.updateElements();
 
     this.elements.forEach((element) => {
-      this.player.crashWith(element)
+      this.crashWith(element)
 
     })
 
@@ -161,18 +141,35 @@ class Game {
     
     const element = new GameObject (randomX, originY, elements[randomIndex].width, elements[randomIndex].heigth, elements[randomIndex].img, maxYElement, elements[randomIndex].elementPoints);
 
+
     element.speedY = 8;
 
     this.elements.push(element);
 
     }
-   
+  }
+
+
+  crashWith = (element) => {
+    if (!( this.player.bottom() < element.top() ||
+      this.player.top() > element.bottom() ||
+      this.player.right() < element.left() ||
+      this.player.left() > element.right() ))
+    
+    {
+      this.score += element.elementPoints
+      element.x = 0;
+      element.y = 0;
+      
+      return true
+    }
+      return false
   }
 
     updateTotal() {
       ctx.font = "25px Verdana";
       ctx.fillStyle = "black";
-      ctx.fillText(`Score: ${this.total}`, 60, 75); 
+      ctx.fillText(`Score: ${this.score}`, 60, 75); 
     }
   
 

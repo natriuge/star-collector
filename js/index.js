@@ -7,8 +7,8 @@ const bgImgCanvas = new Image ();
 bgImgCanvas.src = './images/background.png';
 
 // Imagem do personagem
-const characterImg = new Image();
-characterImg.src = './images/mage.png';
+// const characterImg = new Image();
+// characterImg.src = './images/mage.png';
 
 // Imagem da estrela
 const starImg = new Image();
@@ -26,7 +26,9 @@ meteorImg.src = './images/meteor.png';
 const elements = [
   {img:starImg, width:65, heigth: 120, elementPoints: 1},
   {img:superStarImg, width:65, heigth: 120, elementPoints: 3}, 
-  {img:meteorImg, width:60, heigth: 120, elementPoints: -1},
+  {img:meteorImg, width:60, heigth: 120, elementPoints: -2},
+  {img:meteorImg, width:60, heigth: 120, elementPoints: -2},
+
 ]
 
 
@@ -48,10 +50,10 @@ function startGame() {
   characterImg.src = './images/mage.png';
   
   const backgroundImage = new BackgroundImage (0, 0, canvas.width, canvas.height, bgImgCanvas);
-  const maxYMage = canvas.height - 130;
-  const characterImage = new GameObject(500, canvas.height - 130, 100, 130, characterImg, maxYMage, 0);
+  // const maxYMage = canvas.height - 130;
+  // const characterImage = new GameObject(500, canvas.height - 130, 100, 130, characterImg, maxYMage, 0);
 
-  const game = new Game(backgroundImage, characterImage); 
+  const game = new Game(backgroundImage); 
 
   game.start();
 
