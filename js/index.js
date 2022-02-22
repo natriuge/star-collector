@@ -31,6 +31,10 @@ const elements = [
 
 ]
 
+const elementSound = new Audio();
+elementSound.src='./sounds/element-sound.mp3';
+elementSound.volume = 1;
+
 
 // function drawCanvas() {
 //   ctx.drawImage(starImg, 200, 0, 65, 120);

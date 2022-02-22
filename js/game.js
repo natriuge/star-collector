@@ -54,7 +54,6 @@ class GameObject {
   }
 }
 
-  
 
 
 class BackgroundImage extends GameObject {
@@ -82,6 +81,7 @@ const characterImg = new Image();
   characterImg.src = './images/mage.png';
 
 const newPlayer = new GameObject (500, canvas.height - 130, 100, 130, characterImg, 570, 0);
+
     
 class Game {
   constructor(background, player) {
@@ -145,6 +145,8 @@ class Game {
     element.speedY = 8;
 
     this.elements.push(element);
+
+    elementSound.play();
 
     }
   }
