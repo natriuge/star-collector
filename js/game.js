@@ -113,11 +113,11 @@ class Game {
 
     })
 
-
-    this.updateTotal();
+    this.updateScore();
 
     this.animationId = requestAnimationFrame(this.updateGame);
 
+    this.checkGameOver();
 
   };
 
@@ -168,10 +168,41 @@ class Game {
       return false
   }
 
-    updateTotal() {
+  updateScore() {
       ctx.font = "25px Verdana";
       ctx.fillStyle = "black";
       ctx.fillText(`Score: ${this.score}`, 60, 75); 
+  }
+    
+
+  checkGameOver(){ 
+    if (this.score >= 1) {
+  
+      cancelAnimationFrame(this.animationId);
+  
+      this.gameOver();
+    }
+  };
+
+
+  gameOver() { 
+    this.clear(); 
+
+    const gameOverImg = new Image ();
+    gameOverImg.src = './images/background.png';
+
+    ctx.drawImage(gameOverImg, 0, 0, 1000, 700);
+
+    ctx.font = "30px Verdana";
+    const gradient = ctx.createLinearGradient(0,0,canvas.width, 0);
+    gradient.addColorStop("0"," magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    ctx.fillStyle = gradient;
+    ctx.fillText('Congratulations!', 100, 100);
+    ctx.fillText(`Your score: ${this.score}`, 300, 300);
+    ctx.fillText('Youre amazing!', 500, 500);
+
     }
   
 
