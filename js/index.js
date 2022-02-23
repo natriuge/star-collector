@@ -60,6 +60,12 @@ function startGame() {
 
   game.start();
 
+  game.startTimer();
+
+  game.updateTimer();
+
+
+
   document.addEventListener("keydown", (event) => {
       if (event.code === "ArrowLeft") {
         game.player.speedX = -4;
@@ -76,7 +82,6 @@ function startGame() {
       game.player.speedX = 0;
       game.player.speedY = 0;
     })
-         
 }
 
 

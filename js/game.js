@@ -82,6 +82,8 @@ const characterImg = new Image();
 
 const newPlayer = new GameObject (500, canvas.height - 130, 100, 130, characterImg, 570, 0);
 
+let timer;
+let timeLeft = 10;
     
 class Game {
   constructor(background, player) {
@@ -90,12 +92,42 @@ class Game {
     this.elements = [];
     this.frames = 0; 
     this.score = 0;
-    this.animationId; 
+    this.animationId;
+
   };
 
   start = () => {
     this.updateGame();
+    this.startTimer();
+    this.updateTimer();
+
   };
+
+
+  updateTimer = () => {
+    timeLeft = timeLeft - 1;
+    console.log(timeLeft)
+    if (timeLeft >= 0) {
+    this.timerScreen; 
+  
+    } else {
+      this.checkGameOver;
+    }
+
+  }
+
+  timerScreen() {
+    ctx.font = "20px 'Press Start 2P'";
+    ctx.fillStyle = "black";
+    ctx.fillText(`Timer: ${timeLeft}`, 55, 75);
+  }
+
+    
+
+  startTimer () {
+    timer = setInterval(this.updateTimer, 1000);
+    this.updateTimer();
+  }
 
   updateGame = () => {
     this.clear();
@@ -181,7 +213,7 @@ class Game {
     
 
   checkGameOver(){ 
-    if (this.score >= 10) {
+    if (this.timeLeft = 0) {
   
       cancelAnimationFrame(this.animationId);
   
@@ -228,6 +260,8 @@ class Game {
       var y = ev.clientY - rect.top
       return {x, y};
   }
+
+  cancelInterval(timer);
 
 }
   
