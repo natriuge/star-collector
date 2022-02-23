@@ -168,15 +168,19 @@ class Game {
       return false
   }
 
+
+
   updateScore() {
-      ctx.font = "25px Verdana";
+
+      ctx.font = "20px 'Press Start 2P'";
       ctx.fillStyle = "black";
-      ctx.fillText(`Score: ${this.score}`, 60, 75); 
+      ctx.fillText(`Score: ${this.score}`, 55, 75); 
+      
   }
     
 
   checkGameOver(){ 
-    if (this.score >= 1) {
+    if (this.score >= 10) {
   
       cancelAnimationFrame(this.animationId);
   
@@ -185,27 +189,47 @@ class Game {
   };
 
 
-  gameOver() { 
-    this.clear(); 
 
-    const gameOverImg = new Image ();
-    gameOverImg.src = './images/background.png';
+
+  gameOver() { 
+     
+    this.clear(); 
 
     ctx.drawImage(gameOverImg, 0, 0, 1000, 700);
 
-    ctx.font = "30px Verdana";
-    const gradient = ctx.createLinearGradient(0,0,canvas.width, 0);
-    gradient.addColorStop("0"," magenta");
-    gradient.addColorStop("0.5", "blue");
-    gradient.addColorStop("1.0", "red");
-    ctx.fillStyle = gradient;
-    ctx.fillText('Congratulations!', 100, 100);
-    ctx.fillText(`Your score: ${this.score}`, 300, 300);
-    ctx.fillText('Youre amazing!', 500, 500);
+    ctx.font = "80px 'Press Start 2P'";
+    ctx.fillStyle = "black";
+    ctx.fillText(`${this.score}`, 430, 400);
 
+
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(225,225,225,0.1)';
+
+    var box = {
+      x: 414,
+      y: 545,
+      w: 172,
+      h: 60
     }
-  
 
+    ctx.fillRect(box.x, box.y, box.w, box.h);
+    canvas.addEventListener('click', function(ev) {
+      var {x, y} = getCursorPosition(canvas, ev);
+  
+      if (box.x <= x && x <= box.x+box.w && box.y <= y && y <= box.y+box.h) {
+        startGame();
+      }
+    });
+
+    function getCursorPosition(canvas, ev) {
+      var rect = canvas.getBoundingClientRect()
+      var x = ev.clientX - rect.left
+      var y = ev.clientY - rect.top
+      return {x, y};
+  }
+
+}
+  
   clear = () => {
     ctx.clearRect(0,0, canvas.width, canvas.height);
 
