@@ -60,9 +60,9 @@ function startGame() {
 
   game.start();
 
-  game.startTimer();
+  // game.startTimer();
 
-  game.updateTimer();
+  // game.updateTimer();
 
 
 
@@ -98,8 +98,8 @@ window.addEventListener("load", () => {
 
     ctx.drawImage(instructionsImg, 0, 0, 1000, 700)
 
-    document.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
+    document.addEventListener("keydown", function(event) {
+      if (event.code === 'Enter') {
 
         startGame();
 

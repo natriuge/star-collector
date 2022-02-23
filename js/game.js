@@ -83,7 +83,7 @@ const characterImg = new Image();
 const newPlayer = new GameObject (500, canvas.height - 130, 100, 130, characterImg, 570, 0);
 
 let timer;
-let timeLeft = 10;
+
     
 class Game {
   constructor(background, player) {
@@ -93,41 +93,42 @@ class Game {
     this.frames = 0; 
     this.score = 0;
     this.animationId;
+    this.timeLeft = 10;
 
   };
 
   start = () => {
     this.updateGame();
-    this.startTimer();
-    this.updateTimer();
+    // this.startTimer();
+    // this.updateTimer();
 
+    setInterval(this.updateTimer, 1000)
   };
 
 
   updateTimer = () => {
-    timeLeft = timeLeft - 1;
-    console.log(timeLeft)
-    if (timeLeft >= 0) {
+    this.timeLeft --;
+    this.checkGameOver;
+    if (this.timeLeft >= 0) {
     this.timerScreen; 
   
-    } else {
-      this.checkGameOver;
-    }
+    } 
+    
 
   }
 
   timerScreen() {
     ctx.font = "20px 'Press Start 2P'";
     ctx.fillStyle = "black";
-    ctx.fillText(`Timer: ${timeLeft}`, 55, 75);
+    ctx.fillText(`Timer: ${this.timeLeft}`, 55, 75);
   }
 
     
 
-  startTimer () {
-    timer = setInterval(this.updateTimer, 1000);
-    this.updateTimer();
-  }
+  // startTimer () {
+  //   setInterval(this.updateTimer, 1000);
+  //   // this.updateTimer();
+  // }
 
   updateGame = () => {
     this.clear();
@@ -139,6 +140,7 @@ class Game {
     this.player.draw();
 
     this.updateElements();
+    console.log(this.timeLeft)
 
     this.elements.forEach((element) => {
       this.crashWith(element)
@@ -213,11 +215,12 @@ class Game {
     
 
   checkGameOver(){ 
+
     if (this.timeLeft = 0) {
   
       cancelAnimationFrame(this.animationId);
   
-      this.gameOver();
+      this.gameOver;
     }
   };
 
