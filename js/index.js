@@ -29,6 +29,9 @@ const elements = [
 
 ]
 
+const instructionsImg = new Image();
+instructionsImg.src = './images/instructions.png'
+
 const elementSound = new Audio();
 elementSound.src='./sounds/element-sound.mp3';
 elementSound.volume = 1;
@@ -80,20 +83,29 @@ function startGame() {
 
 
 window.addEventListener("load", () => {
-  ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700)
 
+
+  ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700)
 
   document.getElementById("start-button").onclick = () => {
     
     document.getElementById("start-screen").style.display = "none";
-    
-    startGame();
 
-    startSound.play();
+    ctx.drawImage(instructionsImg, 0, 0, 1000, 700)
+
+    document.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+
+        startGame();
+
+        startSound.play();
+
+      };
+
+    });
 
   };
-
-
-})
+  
+});
 
 
