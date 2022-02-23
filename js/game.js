@@ -160,8 +160,9 @@ class Game {
     
     {
       this.score += element.elementPoints
-      element.x = 0;
-      element.y = 0;
+      //transfere o elemento para fora da tela
+      element.x = 1000;
+      element.y = 1000;
       
       return true
     }
