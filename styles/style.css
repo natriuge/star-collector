@@ -30,8 +30,8 @@ body {
 
 #game-logo {
   width: 455px;
-  height: 217px;
-  padding-top: 175px;
+  height: 210px;
+  padding-top: 120px;
 }
 
 
@@ -43,13 +43,32 @@ body {
 
 
 #slogan {
-  font-size: 17px;
-  padding: 60px;
+  padding: 30px;
+  font-size: 18px;
   line-height: 30px;
+  
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0
+  }
+  80% {
+    opacity: 0.5;
+  }
+}
 
-#start-button {
+#press-start {
+
+  font-size: 25px;
+  color: #814c9f;
+  animation:  blink 1s linear infinite;
+  
+  }
+
+
+
+/* #start-button {
   width: 120px;
   height: 60px;
   color: white;
@@ -57,4 +76,25 @@ body {
   text-align: center;
   line-height: 25px;
   font-size: 17px;
+} */
+
+#instructions-container{
+display: flex;
+justify-content: center;
+
 }
+
+#instructions {
+  padding: 40px;
+  width: 233px;
+  height: 153px;
+}
+
+#instructions-text {
+  font-size: 17px;
+  padding: 25px;
+  text-align: left;
+  line-height: 30px;
+}
+
+

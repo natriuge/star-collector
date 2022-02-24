@@ -2,26 +2,26 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-// Imagem de fundo do jogo
+
 const bgImgCanvas = new Image ();
 bgImgCanvas.src = './images/background.png';
 
 const gameOverImg = new Image ();
 gameOverImg.src = './images/gameover.png';
 
-// Imagem da estrela
+
 const starImg = new Image();
 starImg.src = './images/star.png';
 
-// Imagem da super estrela
+
 const superStarImg = new Image();
 superStarImg.src = './images/super star.png';
 
-// Imagem do meteoro
+
 const meteorImg = new Image();
 meteorImg.src = './images/meteor.png';
 
-// Array com os elementos, tamanhos atualizados
+
 const elements = [
   {img:starImg, width:65, heigth: 120, elementPoints: 1},
   {img:superStarImg, width:65, heigth: 120, elementPoints: 3}, 
@@ -41,10 +41,11 @@ startSound.src = './sounds/title-sound.wav'
 startSound.volume = 0.1;
 startSound.loop = true;
 
-//Como mudar a sprite do personagem quando o botão da direita é acionado?
+
 
 
 function startGame() { 
+
  
   const bgImgCanvas = new Image ();
   bgImgCanvas.src = './images/background2.png';
@@ -60,21 +61,17 @@ function startGame() {
 
   game.start();
 
-  // game.startTimer();
-
-  // game.updateTimer();
-
-
 
   document.addEventListener("keydown", (event) => {
+  
       if (event.code === "ArrowLeft") {
-        game.player.speedX = -4;
+        game.player.speedX = -5;
       } else if (event.code === "ArrowUp") {
-        game.player.speedY = -4;
+        game.player.speedY = -5;
       } else if (event.code === "ArrowRight") {
-        game.player.speedX = 4;
+        game.player.speedX = 5;
       } else if (event.code === "ArrowDown") {
-        game.player.speedY= 4;
+        game.player.speedY= 5;
       }
     });
 
@@ -86,31 +83,26 @@ function startGame() {
 
 
 
-
 window.addEventListener("load", () => {
 
 
   ctx.drawImage(bgImgCanvas, 0, 0, 1000, 700)
 
-  document.getElementById("start-button").onclick = () => {
+  // document.getElementById("start-button").onclick = () => {
+
+  window.addEventListener("keydown", (event) => {
+    if (event.code === 'Enter') {
     
-    document.getElementById("start-screen").style.display = "none";
+      document.getElementById("start-screen").style.display = "none";
 
-    ctx.drawImage(instructionsImg, 0, 0, 1000, 700)
+      startGame();
 
-    document.addEventListener("keydown", function(event) {
-      if (event.code === 'Enter') {
+      startSound.play();
 
-        startGame();
+    } 
 
-        startSound.play();
+  }, { once: true });
 
-      };
-
-    });
-
-  };
-  
 });
 
 

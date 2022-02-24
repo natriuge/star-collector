@@ -9,12 +9,14 @@ class GameObject {
     this.speedX = 0; 
     this.speedY = 0;
     this.elementPoints = elementPoints; 
+
     };
 
 
   updatePosition() {
     this.x += this.speedX;
     this.y += this.speedY;
+
 
     if (this.x <= 0) {
         this.x = 0;
@@ -93,69 +95,76 @@ class Game {
     this.frames = 0; 
     this.score = 0;
     this.animationId;
-    this.timeLeft = 10;
+    this.timeLeft = 30;
 
   };
 
-  start = () => {
-    this.updateGame();
-    // this.startTimer();
-    // this.updateTimer();
+  start() {
 
-    setInterval(this.updateTimer, 1000)
+    this.updateGame();
+    this.startTimer();
+    this.updateTimer();
+    
   };
 
 
   updateTimer = () => {
+
     this.timeLeft --;
-    this.checkGameOver;
+
     if (this.timeLeft >= 0) {
-    this.timerScreen; 
-  
-    } 
+    } else {
+      this.checkGameOver();
+    }
     
 
   }
 
   timerScreen() {
+
     ctx.font = "20px 'Press Start 2P'";
     ctx.fillStyle = "black";
-    ctx.fillText(`Timer: ${this.timeLeft}`, 55, 75);
+    ctx.fillText(`Timer: ${this.timeLeft}`, 50, 105);
   }
 
     
 
-  // startTimer () {
-  //   setInterval(this.updateTimer, 1000);
-  //   // this.updateTimer();
-  // }
+  startTimer() {
+
+    setInterval(this.updateTimer, 1000);
+  }
 
   updateGame = () => {
     this.clear();
 
     this.background.updatePosition();
+   
     this.background.draw();
+    
 
     this.player.updatePosition();
+  
     this.player.draw();
+   
 
     this.updateElements();
-    console.log(this.timeLeft)
+   
 
     this.elements.forEach((element) => {
       this.crashWith(element)
-
+  
     })
 
     this.updateScore();
 
+    this.timerScreen();
+
     this.animationId = requestAnimationFrame(this.updateGame);
 
-    this.checkGameOver();
 
   };
 
-  updateElements = () => {
+  updateElements() {
     this.frames++;
 
     for (let i = 0; i < this.elements.length; i++ ) {
@@ -194,7 +203,7 @@ class Game {
     
     {
       this.score += element.elementPoints
-      //transfere o elemento para fora da tela
+    
       element.x = 1000;
       element.y = 1000;
       
@@ -209,22 +218,21 @@ class Game {
 
       ctx.font = "20px 'Press Start 2P'";
       ctx.fillStyle = "black";
-      ctx.fillText(`Score: ${this.score}`, 55, 75); 
+      ctx.fillText(`Score: ${this.score}`, 50, 75); 
+      
       
   }
     
 
-  checkGameOver(){ 
+  checkGameOver = () => { 
 
-    if (this.timeLeft = 0) {
-  
+   
+    if (this.timeLeft <= 0) {
       cancelAnimationFrame(this.animationId);
-  
-      this.gameOver;
+
+      this.gameOver();
     }
   };
-
-
 
 
   gameOver() { 
@@ -235,7 +243,7 @@ class Game {
 
     ctx.font = "80px 'Press Start 2P'";
     ctx.fillStyle = "black";
-    ctx.fillText(`${this.score}`, 430, 400);
+    ctx.fillText(`${this.score}`, 420, 400);
 
 
     ctx.beginPath();
@@ -253,7 +261,8 @@ class Game {
       var {x, y} = getCursorPosition(canvas, ev);
   
       if (box.x <= x && x <= box.x+box.w && box.y <= y && y <= box.y+box.h) {
-        startGame();
+        location.reload();
+        
       }
     });
 
@@ -264,14 +273,13 @@ class Game {
       return {x, y};
   }
 
-  cancelInterval(timer);
-
 }
-  
-  clear = () => {
-    ctx.clearRect(0,0, canvas.width, canvas.height);
 
-  };
+clear = () => {
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+
+};
+  
 }
 
 
