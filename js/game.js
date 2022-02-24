@@ -14,15 +14,13 @@ class GameObject {
 
   updatePosition() {
 
-    console.log(this.elementPoints)
-
     this.x += this.speedX;
     this.y += this.speedY;
 
     if (this.x <= 0) {
       this.x = 0;
     }
-    //largura do canvas - largura do personagem
+  
     if (this.x >= canvas.width - this.width) {
       this.x = canvas.width - this.width;
     }
@@ -31,14 +29,14 @@ class GameObject {
       this.y = 0;
     }
 
-    // largura do canvas - altura do personagem
     if (this.y >= this.maxY) {
       this.y = this.maxY;
     }
   }
 
   draw() {
-    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    
   }
 
   left() {
@@ -89,7 +87,9 @@ class BackgroundImage extends GameObject {
 }
 
 const characterImg = new Image();
-characterImg.src = "./images/mage.png";
+characterImg.src = './images/mage.png';
+
+
 
 const newPlayer = new GameObject(500, canvas.height - 130, 100, 130, characterImg, canvas.height - 132 , canvas.width - 100, 0);
 
