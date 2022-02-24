@@ -10,7 +10,7 @@ class GameObject {
     this.speedX = 0;
     this.speedY = 0;
     this.elementPoints = elementPoints;
-  }
+  };
 
   updatePosition() {
 
@@ -32,7 +32,7 @@ class GameObject {
     if (this.y >= this.maxY) {
       this.y = this.maxY;
     }
-  }
+  };
 
   draw() {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
@@ -51,18 +51,18 @@ class GameObject {
   bottom() {
     return this.y + this.height;
   }
-}
+};
 
 class BackgroundImage extends GameObject {
   constructor(x, y, width, height, img) {
     super(x, y, width, height, img);
     this.speedY = 3;
-  }
+  };
 
   updatePosition() {
     this.y += this.speedY;
     this.y %= canvas.height;
-  }
+  };
 
   draw() {
     ctx.drawImage(this.img, 0, this.y, this.width, this.height);
@@ -82,9 +82,9 @@ class BackgroundImage extends GameObject {
         this.width,
         this.height
       );
-    }
-  }
-}
+    };
+  };
+};
 
 const characterImg = new Image();
 characterImg.src = './images/mage.png';
@@ -92,7 +92,6 @@ characterImg.src = './images/mage.png';
 
 
 const newPlayer = new GameObject(500, canvas.height - 130, 100, 130, characterImg, canvas.height - 132 , canvas.width - 100, 0);
-
 
 let timer;
 
@@ -105,13 +104,13 @@ class Game {
     this.score = 0;
     this.animationId;
     this.timeLeft = 30;
-  }
+  };
 
   start() {
     this.updateGame();
     this.startTimer();
     this.updateTimer();
-  }
+  };
 
   updateTimer = () => {
     this.timeLeft--;
@@ -126,11 +125,11 @@ class Game {
     ctx.font = "20px 'Press Start 2P'";
     ctx.fillStyle = "black";
     ctx.fillText(`Timer: ${this.timeLeft}`, 50, 105);
-  }
+  };
 
   startTimer() {
     setInterval(this.updateTimer, 1000);
-  }
+  };
 
   updateGame = () => {
     this.clear();
@@ -192,8 +191,8 @@ class Game {
 
       elementSound.play();
 
-    }
-  }
+    };
+  };
 
   crashWith = (element) => {
     if (
@@ -216,18 +215,18 @@ class Game {
     return false;
   };
 
-  updateScore(){
+  updateScore() {
     ctx.font = "20px 'Press Start 2P'";
     ctx.fillStyle = "black";
     ctx.fillText(`Score: ${this.score}`, 50, 75);
-  }
+  };
 
   checkGameOver = () => {
     if (this.timeLeft <= 0) {
       cancelAnimationFrame(this.animationId);
 
       this.gameOver();
-    }
+    };
   };
 
   gameOver() {
@@ -250,6 +249,7 @@ class Game {
     };
 
     ctx.fillRect(box.x, box.y, box.w, box.h);
+
     canvas.addEventListener("click", function (ev) {
       var { x, y } = getCursorPosition(canvas, ev);
 
@@ -258,9 +258,9 @@ class Game {
         x <= box.x + box.w &&
         box.y <= y &&
         y <= box.y + box.h
-      ) {
-        location.reload();
-      }
+        ) {
+          location.reload();
+          };
     });
 
     function getCursorPosition(canvas, ev) {
@@ -268,10 +268,10 @@ class Game {
       var x = ev.clientX - rect.left;
       var y = ev.clientY - rect.top;
       return { x, y };
-    }
-  }
+    };
+  };
 
   clear = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   };
-}
+};
