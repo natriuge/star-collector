@@ -25,7 +25,7 @@ meteorImg.src = './images/meteor.png';
 const elements = [
   {img:starImg, width:65, heigth: 120, elementPoints: 1},
   {img:superStarImg, width:65, heigth: 120, elementPoints: 3}, 
-  {img:meteorImg, width:60, heigth: 120, elementPoints: -1}
+  {img:meteorImg, width:60, heigth: 120, elementPoints: -1},
 
 ]
 
