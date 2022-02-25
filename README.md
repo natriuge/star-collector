@@ -38,7 +38,11 @@ A versão mobile não está disponível.<br>
  usando imagens vetoriais no Adobe Illustrator.<br><br>
  Para saber mais sobre esse projeto clique [aqui](https://docs.google.com/presentation/d/1Qyw6Ahxk7EAXCOUR87cV1nJFycU-nX1D4hPRwAtGo4w/edit?usp=sharing)!<br>
  
-Obrigada! :sparkles:</b>
+<b><JOGAR><b>
+  
+Clique [aqui](https://natriuge.github.io/star-collector/) para jogar! :sparkles::sparkles:
+  
+  
  
 ![maga_final](https://user-images.githubusercontent.com/96324159/155629135-bd5291d1-50c6-4f7a-a960-a1c079005dba.png)
 
