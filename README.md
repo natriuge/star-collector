@@ -11,7 +11,7 @@ Seu objetivo é coletar o maior número de estrelas durante o tempo de jogo,<br>
 atentando-se ao timer que decrementa a cada segundo.
 
 Simples, certo? Mas cuidado! :warning: :warning: <br>
-Não são apenas estrelas que caem do céu mas também meteoros, <br> 
+Além das estrelas, meteoros também caem do céu de forma aleatória, <br> 
 e toda vez que um deles acertá-lo o total do seu score será reduzido.
 
 <b>SCORE</b>
@@ -40,7 +40,8 @@ A versão mobile não está disponível.<br>
  
 <b>TIME TO PLAY!</b>
   
-Clique [aqui](https://natriuge.github.io/star-collector/) para jogar! :sparkles::sparkles: <br> <br>
+Clique [aqui](https://natriuge.github.io/star-collector/) para jogar! :sparkles::sparkles: <br> 
+(Computers only!) :warning: <br> <br>
   
 
  
