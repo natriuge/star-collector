@@ -18,25 +18,28 @@ e toda vez que um deles acertá-lo o total do seu score será reduzido.
 
 Todas as estrelas pontuam, mas as Super Estrela pontuam ainda mais!<br>
 Use a tabela abaixo para referência:
-<br>
-<br>
+
 
 ![instructionsfinal](https://user-images.githubusercontent.com/96324159/155624489-26e53f86-319b-40b3-9398-8a7e8ae1a6be.png)
 
 <b>CONTROLES</b>
 
 Use as setas do teclado para mover a pequena maga pelo jogo.<br>
-Você pode movê-la para direita, esquerda, pra cima ou pra baixo.
+Você pode movê-la para direita, esquerda, pra cima ou pra baixo.<br>
 
+<b>ESPECIFICAÇÕES</b> 
+
+Este é um jogo para computador que necessita de um teclado.<br>
+A versão mobile não está disponível.<br>
 
 <b>EXTRAS</b>
   
  Todas a arte deste jogo foi criada especialmente para ele <br>
  usando imagens vetoriais no Adobe Illustrator.<br>
- Para saber mais sobre esse projeto clique [aqui]!
+ Para saber mais sobre esse projeto clique [aqui]!<br>
  
  <b>Isso é tudo!<br>
-Boa sorte! :sparkles:</b>
+Obrigada! :sparkles:</b>
  
 ![maga_final](https://user-images.githubusercontent.com/96324159/155629135-bd5291d1-50c6-4f7a-a960-a1c079005dba.png)
 
