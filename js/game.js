@@ -103,7 +103,7 @@ class Game {
     this.frames = 0;
     this.score = 0;
     this.animationId;
-    this.timeLeft = 30;
+    this.timeLeft = 50;
   };
 
   start() {
