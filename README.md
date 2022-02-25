@@ -35,10 +35,9 @@ A versão mobile não está disponível.<br>
 <b>EXTRAS</b>
   
  Todas a arte deste jogo foi criada especialmente para ele <br>
- usando imagens vetoriais no Adobe Illustrator.<br>
- Para saber mais sobre esse projeto clique [aqui]!<br>
+ usando imagens vetoriais no Adobe Illustrator.<br><br>
+ Para saber mais sobre esse projeto clique [aqui](https://docs.google.com/presentation/d/1Qyw6Ahxk7EAXCOUR87cV1nJFycU-nX1D4hPRwAtGo4w/edit?usp=sharing)!<br>
  
- <b>Isso é tudo!<br>
 Obrigada! :sparkles:</b>
  
 ![maga_final](https://user-images.githubusercontent.com/96324159/155629135-bd5291d1-50c6-4f7a-a960-a1c079005dba.png)
