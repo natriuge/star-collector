@@ -16,7 +16,7 @@ e toda vez que um deles acertá-lo o total do seu score será reduzido.
 
 <b>SCORE</b>
 
-Todas as estrelas pontuam, mas as Super Estrela pontuam ainda mais!<br>
+Todas as estrelas pontuam, mas as Super Estrelas pontuam ainda mais!<br>
 Use a tabela abaixo para referência:
 
 
