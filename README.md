@@ -34,7 +34,7 @@ A versão mobile não está disponível.<br>
 
 <b>EXTRAS</b>
   
- Todas a arte deste jogo foi criada especialmente para ele <br>
+ Toda a arte deste jogo foi criada especialmente para ele <br>
  usando imagens vetoriais no Adobe Illustrator.<br><br>
  Para saber mais sobre esse projeto clique [aqui](https://docs.google.com/presentation/d/1Qyw6Ahxk7EAXCOUR87cV1nJFycU-nX1D4hPRwAtGo4w/edit?usp=sharing)!<br>
  
