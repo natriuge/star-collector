@@ -14,7 +14,7 @@ Simples, certo? Mas cuidado! :warning: :warning: <br>
 Além das estrelas, meteoros também caem do céu de forma aleatória, <br> 
 e toda vez que um deles acertá-lo o total do seu score será reduzido.
 
-<b>SCORE</b>
+### SCORE
 
 Todas as estrelas pontuam, mas as Super Estrelas pontuam ainda mais!<br>
 Use a tabela abaixo para referência:
@@ -22,23 +22,23 @@ Use a tabela abaixo para referência:
 
 ![instructionsfinal](https://user-images.githubusercontent.com/96324159/155624489-26e53f86-319b-40b3-9398-8a7e8ae1a6be.png)
 
-<b>CONTROLES</b>
+### CONTROLES
 
 Use as setas do teclado para mover a pequena maga pelo jogo.<br>
 Você pode movê-la para direita, esquerda, pra cima ou pra baixo.<br>
 
-<b>ESPECIFICAÇÕES</b> 
+### ESPECIFICAÇÕES 
 
 Este é um jogo para computador que necessita de um teclado.<br>
 A versão mobile não está disponível.<br>
 
-<b>EXTRAS</b>
+### EXTRAS
   
  Toda a arte deste jogo foi criada especialmente para ele <br>
  usando imagens vetoriais no Adobe Illustrator.<br><br>
  Para saber mais sobre esse projeto clique [aqui](https://docs.google.com/presentation/d/1Qyw6Ahxk7EAXCOUR87cV1nJFycU-nX1D4hPRwAtGo4w/edit?usp=sharing)!<br>
  
-<b>TIME TO PLAY!</b>
+### TIME TO PLAY!
   
 Clique [aqui](https://natriuge.github.io/star-collector/) para jogar! :sparkles::sparkles: <br> 
 (Computers only!) :warning: <br> <br>
