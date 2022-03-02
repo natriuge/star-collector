@@ -41,7 +41,7 @@ A versão mobile não está disponível.<br>
 ### TIME TO PLAY!
   
 Clique [aqui](https://natriuge.github.io/star-collector/) para jogar! :sparkles::sparkles: <br> 
-(Computers only!) :warning: <br> <br>
+:warning: (Computers only!) :warning: <br> <br>
   
 
  
